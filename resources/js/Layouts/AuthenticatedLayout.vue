@@ -32,10 +32,13 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                            </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
                                 <NavLink :href="route('clientes.index')" :active="route().current('clientes')">
                                     Clientes
+                                </NavLink>
+
+                                <NavLink :href="route('products.index')" :active="route().current('products')">
+                                    Produtos
                                 </NavLink>
                             </div>
                         </div>
@@ -120,11 +123,13 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
-                    </div>
 
-                    <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('clientes.index')" :active="route().current('clientes')">
-                            clientes
+                            Clientes
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('products.index')" :active="route().current('products')">
+                            Produtos
                         </ResponsiveNavLink>
                     </div>
 

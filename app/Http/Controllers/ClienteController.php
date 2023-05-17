@@ -33,13 +33,9 @@ class ClienteController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        //
         $validated = $request->validate([
             'name' => 'required|string|max:255',
         ]);
-
-        // $request->user()->cliente()->create($validated);
-        // $request->cliente()->create($validated);
 
         $cliente       = new Cliente();
         $cliente->name = $validated['name'];
