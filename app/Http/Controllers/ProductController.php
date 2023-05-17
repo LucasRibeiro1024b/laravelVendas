@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -17,6 +18,10 @@ class ProductController extends Controller
         return Inertia::render('Products/index', [
             'products' => product::all()
         ]);
+    }
+    public function indexAPI(): JsonResponse
+    {
+        return response()->json(['produtos' => product::all()], 200);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -18,6 +19,10 @@ class ClienteController extends Controller
         return Inertia::render('Clientes/index', [
             'clientes' => Cliente::all()
         ]);
+    }
+    public function indexAPI(): JsonResponse
+    {
+        return response()->json(['clientes' => Cliente::all()], 200);
     }
 
     /**
